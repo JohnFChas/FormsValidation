@@ -1,3 +1,34 @@
 ﻿<div class="col-md-12">
     <h1 ng-bind="title"></h1>
 </div>
+
+<form ng-submit="submitForm()" ng-init="name = ''">
+    <div class="col-md-4">
+
+        <div ng-repeat="input in formInputs track by $index">
+            <validated-input type="input.type"
+                             id="input.name"
+                             label="input.label"
+                             min="input.min"
+                             model="input.model"
+                             isValid="input.isValid"></validated-input>
+        </div>
+
+        <button type="submit" class="btn btn-default">Submit</button>
+
+        <!--<div class="form-group has-feedback"
+             ng-class="{ 'has-error': form.name.$touched && form.name.$invalid,
+                         'has-success': form.name.$touched && form.name.$valid }">
+            <label class="control-label" for="name">Name</label>
+            <input type="text" 
+                   name="name" 
+                   id="name" 
+                   class="form-control" 
+                   ng-model="name" 
+                   required />
+            <span class="glyphicon form-control-feedback"
+                  ng-class="{ 'glyphicon-ok': form.name.$touched && form.name.$valid,
+                              'glyphicon-remove': form.name.$touched && form.name.$invalid }"></span>
+        </div>-->
+    </div>
+</form>
